@@ -8,7 +8,38 @@
  */
 module.exports = function( ceiling ) {
   // do work here
+  var i = 0;
+  var bookkeeper = false;
+  var smallest = 0;
+  // var memoize = 0;
+
+  // Rekting my computer with brute force method
+  var multiples = function(){
+
+    for( i = 1; i <= ceiling; i++){
+
+      if( smallest % i === 0 ){
+       bookkeeper = true;
+      } else {
+       bookkeeper = false;
+      }
+
+    }
 
 
-  return 0;
+
+    if( !bookkeeper ){
+
+      smallest++;
+      mutliples( smallest );
+
+    } else{
+      console.log("i have the value of..." +  smallest);
+      return smallest;
+
+    }
+  };
+
+  return multiples(ceiling);
+
 };
